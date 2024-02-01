@@ -4,6 +4,7 @@ use std::thread;
 use std::time::Duration;
 
 fn main() {
+    println!("Welcome!\nType something you'd like to be shuffled and sorted :)");
     let mut input_text = String::new();
 
     io::stdin()
@@ -11,15 +12,40 @@ fn main() {
         .expect("Failed to read line");
 
     let input_text = input_text.trim();
-
     let text_vector: Vec<(char, u32)> = input_text
         .char_indices()
         .map(|(i, c)| (c, i as u32))
         .collect();
     let mut shuffled_vector = text_vector.clone();
     shuffled_vector.shuffle(&mut rand::thread_rng());
- //   bubble_sort(&mut shuffled_vector);
- gnome_sort(&mut shuffled_vector);
+    //Choosing your sort
+
+    println!("Type 1 to bubble sort, 2 to gnome sort");
+    loop {
+        let mut guess = String::new();
+
+        io::stdin()
+            .read_line(&mut guess)
+            .expect("Failed to read line");
+
+        let guess: i32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
+        match guess {
+            1 => {
+                bubble_sort(&mut shuffled_vector);
+                break;
+            }
+            2 => {
+                gnome_sort(&mut shuffled_vector);
+                break;
+            }
+            _ => println!("Type a number between 1 and 2"),
+        };
+    }
+
+
     let characters: Vec<char> = shuffled_vector.iter().map(|&(c, _)| c).collect();
     let result_string: String = characters.into_iter().collect();
     println!("{}", result_string);
