@@ -8,3 +8,5 @@ In this project so far I have learned this
 - Learning how to better read and understand code
 - Bubble sort: compares two elements then swaps if needed as it moves up the list
 - Radix sort: counts the digits 0-9, 00-90, 000-900, and sorts into buckets
+- Learning how to compile terminal apps on android with termux
+- Learned that downloading binary files to git may be a bad idea since they slow it down and bloat it, also cannot be read with version control
