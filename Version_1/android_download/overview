@@ -1,0 +1,6 @@
+Use this terminal app on android with Termux
+- Install Termux from the F-Droid store (look up F-droid store installation guide)
+- Setup Termux (https://www.youtube.com/watch?v=0lWGtfo7-ug&pp=ygUGdGVybXV4) video guide
+- Download sort_say from android_download part of this repo onto your android phone
+- cd to folder with sort_say within
+- run ./sort_say command within Termux
