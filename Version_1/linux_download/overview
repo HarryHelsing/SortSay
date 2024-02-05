@@ -1,0 +1,5 @@
+A linux binary to be downloaded and ran in your terminal as follows
+- Download sort_say from the linux_download section on this repo
+- Open your terminal
+- Use cd command to move to directory(folder) that has the sort_say file within
+- Once in the correct directory run this comman in the terminal ./sort_say
